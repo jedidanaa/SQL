@@ -1,0 +1,5 @@
+SELECT price + tax AS total_cost;
+SELECT salary - deduction AS net_salary;
+SELECT quantity * unit_price AS total;
+SELECT total / count AS average;
+SELECT amount % 2 AS remainder;
