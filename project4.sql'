@@ -1,0 +1,29 @@
+SELECT Department, AVG(Salary) AS AvgSalary
+FROM Employees
+GROUP BY Department;
+
+-- Only IT employees, then group by department
+SELECT Department, AVG(Salary) AS AvgSalary
+FROM Employees
+WHERE Department = 'IT'
+GROUP BY Department;
+
+-- Departments with average salary above 5000
+SELECT Department, AVG(Salary) AS AvgSalary
+FROM Employees
+GROUP BY Department
+HAVING AVG(Salary) > 5000;
+
+-- Sort departments by average salary (highest first)
+SELECT Department, AVG(Salary) AS AvgSalary
+FROM Employees
+GROUP BY Department
+ORDER BY AvgSalary DESC;
+
+-- Find departments with more than 3 employees,
+-- show their average salary, sorted by highest average
+SELECT Department, COUNT(*) AS EmployeeCount, AVG(Salary) AS AvgSalary
+FROM Employees
+GROUP BY Department
+HAVING COUNT(*) > 3
+ORDER BY AvgSalary DESC;
